@@ -1,11 +1,18 @@
 void setup()
 {
-  size(300,300);
+  size(800,800);
 }
+
 void draw()
 {
 
 }
+
+void lightning()
+{
+
+}
+
 void mousePressed()
 {
 
