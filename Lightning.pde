@@ -3,34 +3,40 @@ void setup()
 	noLoop();
   	size(800,800);
 
-  //background(50,100,255);
+  	background(0);
 }
 
 int x1 = 0;
-int y1 = 0;
+int y1 = 400;
 int x2 = 0;
-int y2 = y1+((int)(Math.random()*40)-20);
+int y2 = y1+((int)(Math.random()*20)-10);
 
 void draw()
 {	
-	fill(0,0,255);
-	line(x1,100,200,y2);
-	//while(x1<800)
-	//{
-	//	fill(0,255,255);
-	//	line(x1,y1,x2,y2);
-	//	x2 += x1 + ((int)(Math.random()*10)+20);
-	//	y1 = y2;
-	//}	
-	//if(x1 > 800)
-	//{
-	//	x1 = 0;
-	//}	
+	strokeWeight(2);
+	
+	
+	for(int i = 0;i < 50;i++)
+	{
+		stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		lightning();
+		if(x1 > 800)
+		{
+			x2 = 0;
+			y2 = 400 +((int)(Math.random()*20)-10);
+		}
+	}	
+		
+		
 }
 
 void lightning()
 {
-
+	x1 = x2;
+	y1 = y2;
+	x2 = x2 + ((int)(Math.random()*40)+20);
+	y2 = y2 + ((int)(Math.random()*80)-40);
+	line(x1,y1,x2,y2);
 }
 
 void mousePressed()
